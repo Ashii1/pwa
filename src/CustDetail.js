@@ -87,6 +87,18 @@ const CustDetail = () => {
       <div className="detail-box">
 
         <p>Customer Name: {name}</p>
+        
+        <div className="dob">
+          <label>Date of Birth</label>
+          <DatePicker
+            id="dob"
+            selected={dob}
+            onChange={(date) => setDob(date)}
+            dateFormat="dd/MM/yyyy"
+            placeholderText="Select date"
+          />
+        </div>
+
         <div className="c-dropdown">
           <label>Select App</label>
           <select
@@ -100,16 +112,6 @@ const CustDetail = () => {
             <option value="Twitter">Twitter</option>
             <option value="Instagram">Instagram</option>
           </select>
-        </div>
-        <div className="dob">
-          <label>Date of Birth</label>
-          <DatePicker
-            id="dob"
-            selected={dob}
-            onChange={(date) => setDob(date)}
-            dateFormat="dd/MM/yyyy"
-            placeholderText="Select date"
-          />
         </div>
         <button onClick={handleSubmit}>Submit</button>
       </div>
