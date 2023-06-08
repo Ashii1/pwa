@@ -71,13 +71,15 @@ const CustDetail = () => {
         <div className="detail-box-1">
           <p>Name: {name}</p>
 
-          <p>Customer App: {dropdownValue}</p>
+          <p>Customer App:</p>
+             <p style={{color:"red" , marginTop:"-20px"}}>{dropdownValue} </p>
 
-          <p>Date of Birth: {dob ? dob.toLocaleDateString() : ''}</p>
+          <p>Date of Birth</p> 
+          <p style={{color:"red" , marginTop:"-20px"}}>{dob ? dob.toLocaleDateString() : ''}</p>
           <Link className='back' to="/"> Back</Link>
         </div>
       </div>
-    );
+    )
   }
   return (
     <div className="cdetails">
@@ -92,6 +94,7 @@ const CustDetail = () => {
             value={dropdownValue}
             onChange={(e) => setDropdownValue(e.target.value)}
           >
+             <option value=""></option>
             <option value="Whatsapp">Whatsapp</option>
             <option value="Facebook">Facebook</option>
             <option value="Twitter">Twitter</option>
