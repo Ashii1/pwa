@@ -23,15 +23,15 @@ a{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100vh;
-    background-color: beige;
+    /*height: 100vh;
+    background-color: beige;*/
 }
 .cdetails p{
   background-color: rgb(206 200 255);
   width: 100%;
   margin-top: 0;
   margin-bottom: 40px;
-  padding: 16px 0;
+  padding: 16px 13px;
   font-size: x-large;
 
 }
@@ -51,7 +51,7 @@ a{
     align-items: center;
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 50%;
     border-radius: 20px;
     box-shadow: 0 1px 0px 2px;
     overflow: hidden;
