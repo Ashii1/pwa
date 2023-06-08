@@ -5,7 +5,7 @@ import CustDetail from './CustDetail';
 
 
 
-const App = () => {
+function App() {
   return (
     <div>
       <BrowserRouter>
