@@ -10,23 +10,34 @@ const CustDetail = () => {
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
+    if (dropdownValue == "") {
+      alert('Select Required values')
+      return
+    }
+    if (dob == "Select App") {
+      alert("Select Required values ")
+      return
+    }
+
     e.preventDefault();
-
-
-
-
-    const queryParams = new URLSearchParams();
-    queryParams.set('name', name);
-    queryParams.set('dropdown', dropdownValue);
-    queryParams.set('dob', dob ? dob.toISOString() : '');
-
-
-    const url = `/next-page?${queryParams.toString()}`;
-
-
-
     setSubmitted(true);
+
+
+
+
   };
+  // const queryParams = new URLSearchParams();
+  // queryParams.set('name', name);
+  //queryParams.set('dropdown', dropdownValue);
+  //queryParams.set('dob', dob ? dob.toISOString() : '');
+
+
+  //const url = `/?${queryParams.toString()}`;
+
+
+
+
+
 
   /*useEffect(() => {
     // Get the search parameters from the current URL
@@ -71,11 +82,11 @@ const CustDetail = () => {
         <div className="detail-box-1">
           <p>Name: {name}</p>
 
-          <p>Customer App:</p>
-             <p style={{color:"red" , marginTop:"-20px"}}>{dropdownValue} </p>
+          <p>Customer App</p>
+          <p style={{ color: "red", marginTop: "-20px" }}>{dropdownValue} </p>
 
-          <p>Date of Birth</p> 
-          <p style={{color:"red" , marginTop:"-20px"}}>{dob ? dob.toLocaleDateString() : ''}</p>
+          <p>Date of Birth</p>
+          <p style={{ color: "red", marginTop: "-20px" }}>{dob ? dob.toLocaleDateString() : ''}</p>
           <Link className='back' to="/"> Back</Link>
         </div>
       </div>
@@ -87,7 +98,7 @@ const CustDetail = () => {
       <div className="detail-box">
 
         <p>Customer Name: {name}</p>
-        
+
         <div className="dob">
           <label>Date of Birth</label>
           <DatePicker
@@ -106,7 +117,7 @@ const CustDetail = () => {
             value={dropdownValue}
             onChange={(e) => setDropdownValue(e.target.value)}
           >
-             <option value=""></option>
+            <option value="">Select App</option>
             <option value="Whatsapp">Whatsapp</option>
             <option value="Facebook">Facebook</option>
             <option value="Twitter">Twitter</option>
